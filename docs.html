@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HronixBot - The most fun bot for Discord</title>
+
+    <style>
+        /* style.css */
+
+        a {
+            text-decoration: none;
+        }
+
+        .logo {
+            font-family: "Candara", sans-serif;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hronix {
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .bot {
+            font-weight: regular;
+            color: #ff8c42;
+        }
+
+        .btn {
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: bold;
+            border-radius: 12px;
+        }
+        
+        /* HEADER */
+
+        header {
+            background-color: #19191d;
+        }
+
+        .header__container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 1360px;
+            margin: 0 auto;
+        }
+
+        .logo-header-icon {
+            width: 32px;
+            padding-right: 5px;
+        }
+
+        .logo-header-text {
+            font-size: 27px;
+        }
+
+        nav {
+            font-family: "Nunito", sans-serif;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        header nav ul li {
+            padding: 30px;
+        }
+
+        header nav ul li a {
+            color: #bebebe;
+        }
+
+        header nav ul li a:hover {
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .btn-login {
+            min-width: 80px;
+            padding: 7px 5px;
+            background-color: #0076FF;
+            color: white;
+            font-size: 16px;
+        }
+
+        /* DOCS */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Nunito Sans", sans-serif;
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .documentation-section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .documentation-section h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .documentation-section h3 {
+            color: #34495e;
+            margin: 1.5rem 0 0.5rem 0;
+        }
+
+        .command {
+            background: #ecf0f1;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+        }
+
+        .command-name {
+            font-family: 'Courier New', monospace;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .command-desc {
+            margin: 0.5rem 0;
+        }
+
+        .example {
+            background: #2c3e50;
+            color: white;
+            padding: 0.8rem;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 0.5rem 0;
+        }
+
+        .note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+
+        .doc-btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 0.5rem 0;
+            transition: background 0.3s;
+        }
+
+        .doc-btn:hover {
+            background: #2980b9;
+        }
+    </style>
+    
+    <link rel="icon" type="image/svg+xml" href="img/elogo.png" />
+</head>
+<body>
+
+    <header>
+        <div class="header__container">
+            <div class="logo">
+                <img src="img/elogo.png" alt="" class="logo-header-icon">
+
+                <span class="logo-header-text">
+                    <span class="hronix header-hronix">Hronix</span><span class="bot header-bot">Bot</span>
+                </span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="terms.html">Commands</a></li>
+                    <li><a href="docs.html">Docs</a></li>
+                    <li><a href="yap.html">Rules</a></li>
+                </ul>
+            </nav>
+            <div class="block__btn">
+                <button class="btn btn-login">Login</button>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+
+        <section id="getting-started">
+            <h2>🚀 Начало работы</h2>
+            <p>Чтобы добавить HronixBot на ваш сервер, нажмите кнопку ниже и выберите нужный сервер.</p>
+            <a href="#" class="btn">Добавить бота на сервер</a>
+            
+            <div class="note">
+                <strong>⚠️ Требуемые права:</strong> Боту необходимы права на "Отправка сообщений", "Чтение истории сообщений" и "Управление сообщениями" для полноценной работы.
+            </div>
+        </section>
+
+        <section id="games">
+            <h2>🎮 Игры</h2>
+            <p>HronixBot предлагает увлекательные игры для вашего сервера. Начните играть прямо в Discord!</p>
+            
+            <div class="command">
+                <h3>Шахматы</h3>
+                <p class="command-desc">Сыграйте в шахматы с другом или против бота</p>
+                
+                <div class="example">
+                    <span class="command-name">!chess start @username</span> - Начать игру с пользователем
+                </div>
+                
+                <div class="example">
+                    <span class="command-name">!chess move e2-e4</span> - Сделать ход (нотация: откуда-куда)
+                </div>
+                
+                <div class="example">
+                    <span class="command-name">!chess board</span> - Показать текущую доску
+                </div>
+                
+                <div class="example">
+                    <span class="command-name">!chess resign</span> - Сдаться
+                </div>
+                
+                <div class="note">
+                    <strong>💡 Подсказка:</strong> Используйте шахматную нотацию (e2-e4, g1-f3). Бот поддерживает все стандартные правила шахмат!
+                </div>
+            </div>
+        </section>
+
+        <section id="welcome">
+            <h2>👋 Приветственные сообщения</h2>
+            <p>Настройте автоматические приветствия для новых участников вашего сервера.</p>
+            
+            <div class="command">
+                <h3>Настройка приветствий</h3>
+                <p class="command-desc">Настройте канал для приветственных сообщений и текст</p>
+                
+                <div class="example">
+                    <span class="command-name">!welcome channel #general</span> - Установить канал для приветствий
+                </div>
+                
+                <div class="example">
+                    <span class="command-name">!welcome message Добро пожаловать, {user}! 🎉</span> - Установить текст приветствия
+                </div>
+                
+                <div class="example">
+                    <span class="command-name">!welcome test</span> - Тестовое приветствие (проверить настройки)
+                </div>
+                
+                <div class="example">
+                    <span class="command-name">!welcome disable</span> - Отключить приветственные сообщения
+                </div>
+                
+                <div class="note">
+                    <strong>🔄 Доступные переменные:</strong><br>
+                    • {user} - упоминание пользователя<br>
+                    • {username} - имя пользователя<br>
+                    • {server} - название сервера<br>
+                    • {memberCount} - количество участников
+                </div>
+            </div>
+            
+            <div class="command">
+                <h3>Пример настройки</h3>
+                <div class="example">
+                    !welcome message 🎉 Добро пожаловать, {user}!<br>
+                    Ты {memberCount}-й участник нашего сервера {server}!<br>
+                    Прочитай правила и приятного общения! 🚀
+                </div>
+            </div>
+        </section>
+
+        <section id="basic-commands">
+            <h2>🔧 Основные команды</h2>
+            
+            <div class="command">
+                <div class="example">
+                    <span class="command-name">!help</span> - Показать список команд
+                </div>
+                
+                <div class="example">
+                    <span class="command-name">!ping</span> - Проверить скорость ответа бота
+                </div>
+                
+                <div class="example">
+                    <span class="command-name">!info</span> - Информация о боте
+                </div>
+                
+                <div class="example">
+                    <span class="command-name">!support</span> - Ссылка на сервер поддержки
+                </div>
+            </div>
+        </section>
+
+        <section id="support">
+            <h2>🆘 Поддержка</h2>
+            <p>Возникли проблемы или есть предложения? Присоединяйтесь к нашему серверу поддержки!</p>
+            <a href="#" class="btn">Сервер поддержки</a>
+            
+            <div class="note">
+                <strong>📝 Перед обращением в поддержку:</strong><br>
+                1. Проверьте, есть ли у бота необходимые права<br>
+                2. Убедитесь, что команда введена правильно<br>
+                3. Попробуйте перезагрузить бота командой !restart (если есть права)
+            </div>
+        </section>
+
+    </main>
+    
+
+    <div class="full-line-container">
+        <div class="full-line"></div>
+    </div>
+
+    <footer>
+        
+        <section class="footer">
+            <div class="fo-up-cont">
+                
+
+                <div class="cfuc-left">
+                    <div class="fo-logo">
+                        <img class="fo-logo-icon" src="img/elogo.png" alt="">
+                        <div class="fo-logo-text">
+                            <span class="hronix">Hronix</span><span class="bot">Bot</span>
+                        </div>
+                    </div>
+                    <div class="fo-info">
+                        <p>Your faithful assistant at Discord! Create, customize and have fun with us</p>
+                    </div>
+                </div>
+
+                <div class="fo-links">
+                    <ul>
+                        <li><p>HronixBot</p></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Support Server</a></li>
+                        <li><a href="#">Invite</a></li>
+                    </ul>
+
+                    <ul class="mn-pd">
+                        <li><p>Rules</p></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="block-line-container">
+                <div class="block-line"></div>
+            </div>
+
+            <div class="container fo-down-cont">
+
+                <div class="protection-rights-cont">
+                    <span class="protection-rights">&copy; 2025 HronixBot. All rights reserved.</span>
+                </div>
+
+                <div class="who-did-it-cont">
+                    <span>Made with</span>
+                    <img src="img/heartновлено.png" alt="">
+                    <span>by hron1xx</span>
+                </div>
+
+            </div>
+
+        </section>
+        
+    </footer>
+
+    <script src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Политики - HronixBot</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Dongle:wght@300;400;700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+        :root {
+            --primary-color: #5865F2;
+            --secondary-color: #424549;
+            --accent-color: #1e2124;
+            --text-color: #f0f0f0;
+            --background-color: #36393f;
+            --card-bg: #2f3136;
+            --border-color: #40444b;
+            --hover-color: #4e5aea;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Nunito Sans", sans-serif;
+        }
+        
+        body {
+            background-color: #19191d;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        /* style.css */
+
+        a {
+            text-decoration: none;
+        }
+
+        .logo {
+            font-family: "Candara", sans-serif;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hronix {
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .bot {
+            font-weight: regular;
+            color: #ff8c42;
+        }
+
+        .btn {
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 500;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* HEADER */
+
+        header {
+            background-color: #19191d;
+        }
+
+        .header__container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 1360px;
+            margin: 0 auto;
+        }
+
+        .logo-header-icon {
+            width: 32px;
+            padding-right: 5px;
+        }
+
+        .logo-header-text {
+            font-size: 27px;
+        }
+
+        nav {
+            font-family: "Nunito", sans-serif;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        header nav ul li {
+            padding: 30px;
+        }
+
+        header nav ul li a {
+            color: #bebebe;
+        }
+
+        header nav ul li a:hover {
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .btn-login {
+            min-width: 90px;
+            padding: 7px 5px;
+            background-color: #0076FF;
+            color: white;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-login img {
+            width: 18px;
+            padding-right: 4px;
+        }
+
+        /* END HEADER */
+        
+        .tabs {
+            display: flex;
+            margin: 30px 0 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .tab-button {
+            padding: 12px 24px;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            position: relative;
+            opacity: 0.7;
+            transition: all 0.3s;
+        }
+        
+        .tab-button.active {
+            opacity: 1;
+            color: var(--primary-color);
+        }
+        
+        .tab-button.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: 3px 3px 0 0;
+        }
+        
+        .tab-content {
+            display: none;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 10px 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+        
+        h2 {
+            font-size: 22px;
+            margin: 25px 0 15px;
+            color: var(--text-color);
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        h3 {
+            font-size: 18px;
+            margin: 20px 0 10px;
+            color: var(--text-color);
+        }
+        
+        .active p {
+            margin-bottom: 15px;
+            margin-left: 20px;
+            text-align: justify;
+        }
+        
+        ul, ol {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .last-updated {
+            font-style: italic;
+            color: #a0a0a0;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+        
+        .contact-info {
+            background-color: var(--accent-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        
+        .contact-info h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                justify-content: center;
+            }
+            
+            .tabs {
+                flex-direction: column;
+            }
+            
+            .tab-button {
+                width: 100%;
+                text-align: left;
+            }
+        }
+
+        .priv {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .priv img {
+            width: 60px;
+            height: 60px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header__container">
+            <div class="logo">
+                <img src="img/elogo.png" alt="" class="logo-header-icon">
+
+                <span class="logo-header-text">
+                    <span class="hronix header-hronix">Hronix</span><span class="bot header-bot">Bot</span>
+                </span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="commands.html">Commands</a></li>
+                    <li><a href="docs.html">Docs</a></li>
+                    <li><a href="yap.html">Rules</a></li>
+                </ul>
+            </nav>
+            <div class="block__btn">
+                <button class="btn btn-login">
+                    <img src="img/discordLogoIcon.png" alt="">
+                    Login
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Правовая информация</h1>
+        
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab('terms')">Условия использования</button>
+            <button class="tab-button" onclick="openTab('privacy')">Политика конфиденциальности</button>
+        </div>
+        
+        <div id="terms" class="tab-content active">
+            <div class="priv">
+                <h2>Условия использования</h2>
+                <div class="logo-cont"><img src="img/elogo.png" alt=""></div>
+            </div>
+            <p class="last-updated">Последнее обновление: 22.09.2025</p>
+            
+            <h3>1. Принятие условий</h3>
+            <p>Добро пожаловать на [ВашСайт.com] (далее — «Сайт») и благодарим за интерес к нашему Discord-боту [Название Бота] (далее — «Бот»). Эти Условия использования (далее — «Условия») регулируют ваше использование нашего Сайта и услуг, предоставляемых Ботом.</p>
+            <p><strong>Внимательно прочитайте эти Условия.</strong> Получая доступ к Сайту или используя Бота, вы подтверждаете, что прочитали, поняли и соглашаетесь быть связанными этими Условиями, включая наши Политику конфиденциальности и Правила поведения. Если вы не согласны с этими Условиями, вы не имеете права использовать наш Сайт или Бота.</p>
+            
+            <h3>2. Описание услуг</h3>
+            <p>2.1. Бот [Название Бота] — это программное обеспечение, работающее на платформе Discord, которое предоставляет пользователям различные функциональные возможности, включая, но не ограничиваясь: [кратко опишите ключевые функции, например, модерацию, развлечения, утилиты, музыкальные функции и т.д.].</p>
+            
+            <h3>3. Учетная запись Discord и правила поведения</h3>
+
+            <h4 style="margin-left: 20px;">3.1. Соответствие правилам Discord</h4>
+            <p>Ваше использование Бота должно полностью соответствовать Условиям предоставления услуг Discord (https://discord.com/terms) и Политике конфиденциальности Discord (https://discord.com/privacy), а также любым правилам конкретного сервера Discord, на котором вы используете Бота.</p>
+
+            <h3>4. Наша интеллектуальная собственность</h3>
+            <p>Сайт, Бот, их исходный код, базы данных, функционал, дизайн, логотипы, тексты, графики и все иные элементы защищены законами об авторском праве, товарных знаках и других законах об интеллектуальной собственности. Вы признаете, что мы являемся правообладателем всего вышеперечисленного.</p>
+
+            <h3>5. Прекращение действий</h3>
+            <p>Мы оставляем за собой право по своему усмотрению немедленно приостановить или прекратить ваш доступ к Сайту и Боту без предварительного уведомления и без какой-либо ответственности, если мы сочтем, что вы нарушили какие-либо положения настоящих Условий.</p>
+
+            <h3>6. Изменения условий</h3>
+            <p>Мы можем обновлять эти Условия время от времени. Мы уведомим вас о любых изменениях, разместив новые Условия на этой странице и обновив дату «Последнего обновления». Ваше дальнейшее использование Сайта или Бота после внесения изменений означает ваше согласие с пересмотренными Условиями.</p>
+
+            <div class="contact-info">
+                <h3>Контактная информация</h3>
+                <ul>
+                    <li>Через сервер поддержки Discord: [Ссылка на ваш Discord-сервер]</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="privacy" class="tab-content">
+            <h2>Политика конфиденциальности</h2>
+            <p class="last-updated">Последнее обновление: 22.09.25</p>
+            <p>Эта Политика Конфиденциальности описывает, как мы собираем и используем вашу информацию при использовании нашего Сайта и нашего Discord-бота.</p>
+            <h3>1. Информация, которую мы собираем</h3>
+            <p>Мы получаем данные только когда вы авторизовываетесь через Discord: ваш ID, имя пользователя и список серверов. Они нужны для добавления бота на выбранный вами сервер. Мы не храним эти данные после добавления бота.</p>
+            <p>Если вас что то не устроит, вы в любой момент можете удалить бота с сервера или отозвать доступ в настройках Discord.</p>
+            <div class="contact-info">
+                <h3>Контактная информация</h3>
+                <ul>
+                    <li>Через сервер поддержки Discord: [Ссылка на ваш Discord-сервер]</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        
+    </footer>
+
+    <script>
+        function openTab(tabName) {
+            // Скрыть все вкладки
+            var tabs = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+            
+            // Деактивировать все кнопки
+            var tabButtons = document.getElementsByClassName("tab-button");
+            for (var i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+            
+            // Показать выбранную вкладку и активировать кнопку
+            document.getElementById(tabName).classList.add("active");
+            event.currentTarget.classList.add("active");
+            
+            // Прокрутить к началу содержимого
+            document.getElementById(tabName).scrollIntoView({behavior: 'smooth'});
+        }
+    </script>
+</body>
+</html>

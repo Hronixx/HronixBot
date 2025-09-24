@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <title>HronixBot - The most fun bot for Discord</title>
+    <link rel="icon" type="image/svg+xml" href="img/elogo.png"/>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            color: #fff;
+            background-color: #19191d;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .logo {
+            font-family: "Candara", sans-serif;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hronix {
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .bot {
+            font-weight: regular;
+            color: #ff8c42;
+        }
+
+        .container {
+            max-width: 1120px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: bold;
+            border-radius: 12px;
+        }
+
+        .block__btn {
+            font-family: "DM Sans", sans-serif;
+            display: flex;
+            gap: 16px;
+        }
+
+        /* HEADER */
+
+        .header__container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            width: 1360px;
+            margin: 0 auto;
+        }
+
+        .logo-header-icon {
+            width: 32px;
+            padding-right: 5px;
+        }
+
+        .logo-header-text {
+            font-size: 27px;
+        }
+
+        nav {
+            font-family: "Nunito", sans-serif;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        header nav ul li {
+            padding: 30px;
+        }
+
+        header nav ul li a {
+            color: #bebebe;
+        }
+
+        header nav ul li a:hover {
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .btn-login {
+            min-width: 80px;
+            padding: 7px 5px;
+            background-color: #0076FF;
+            color: white;
+            font-size: 16px;
+        }
+        
+        /* FOOTER */
+
+        footer {
+            background-color: #2f3136;
+        }
+
+        .full-line-container {
+            width: 100%;
+        }
+
+        .full-line {
+            width: 100%;
+            border-top: 1px solid;
+            color: #40444b;
+        }
+
+        .block-line {
+            width: 1120px;
+            border: 1px solid;
+        }
+
+        .block-line-container {
+            max-width: 1120px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #40444b;
+        }
+
+        .fo-up-cont {
+            padding: 30px 0;
+
+            max-width: 1120px;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+        }
+
+        .cfuc-left {
+            flex-basis: 390px;
+            margin: auto 0;
+        }
+
+        .fo-logo {
+            font-family: "Candara", sans-serif;
+            display: flex;
+            align-items: center;
+            padding-bottom: 15px;
+        }
+
+        .fo-logo-icon {
+            width: 36px;
+            height: 36px;
+            align-items: center;
+        }
+
+        .fo-logo-text {
+            font-size: 32px;
+            padding-left: 6px;
+        }
+
+        .fo-info {
+            font-family: "Nunito", sans-serif;
+            font-weight: medium;
+            color: #e6e6e6;
+            font-size: 15px;
+        }
+
+        .fo-links {
+            font-family: "Nunito", sans-serif;
+            display: flex;
+            justify-content: center;
+            color: #fff;
+        }
+
+        .fo-links p {
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .mn-pd {
+            padding-left: 70px;
+        }
+
+        .fo-links ul {
+            list-style: none;
+        }
+
+        .fo-links ul li {
+            padding: 5px 0;
+        }
+
+        .fo-links ul li p {
+            font-weight: medium;
+            padding-bottom: 8px;
+        }
+
+        .fo-links ul li a {
+            color: #bebebe;
+            font-weight: regular;
+        }
+
+        .fo-down-cont {
+            font-family: "Nunito", sans-serif;
+            font-size: 15px;
+            font-weight: regular;
+            color: #afafaf;
+            padding: 30px 0;
+        }
+
+        .who-did-it-cont {
+            display: flex;
+            align-items: center;
+        }
+
+        .who-did-it-cont img {
+            padding: 0 5px;
+            width: 14px;
+            height: 14px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <header>
+        <div class="header__container">
+            <div class="logo">
+                <img src="img/elogo.png" alt="" class="logo-header-icon">
+                <span class="logo-header-text">
+                    <span class="hronix header-hronix">Hronix</span><span class="bot header-bot">Bot</span>
+                </span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="terms.html">Commands</a></li>
+                    <li><a href="docs.html">Docs</a></li>
+                    <li><a href="yap.html">Rules</a></li>
+                </ul>
+            </nav>
+            <div class="block__btn">
+                <button class="btn btn-login">Login</button>
+            </div>
+        </div>
+    </header>
+
+
+    <main id="content"></main>
+    
+
+    <div class="full-line-container">
+        <div class="full-line"></div>
+    </div>
+
+    <footer>
+        <section class="footer">
+            <div class="fo-up-cont">
+                <div class="cfuc-left">
+                    <div class="fo-logo">
+                        <img class="fo-logo-icon" src="img/elogo.png" alt="">
+                        <div class="fo-logo-text">
+                            <span class="hronix">Hronix</span><span class="bot">Bot</span>
+                        </div>
+                    </div>
+                    <div class="fo-info">
+                        <p>Your faithful assistant at Discord! Create, customize and have fun with us</p>
+                    </div>
+                </div>
+                <div class="fo-links">
+                    <ul>
+                        <li><p>HronixBot</p></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Support Server</a></li>
+                        <li><a href="#">Invite</a></li>
+                    </ul>
+                    <ul class="mn-pd">
+                        <li><p>Rules</p></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block-line-container">
+                <div class="block-line"></div>
+            </div>
+            <div class="container fo-down-cont">
+                <div class="protection-rights-cont">
+                    <span class="protection-rights">&copy; 2025 HronixBot. All rights reserved.</span>
+                </div>
+                <div class="who-did-it-cont">
+                    <span>Made with</span>
+                    <img src="img/heart.png" alt="">
+                    <span>by hron1xx</span>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+</body>
+</html>
