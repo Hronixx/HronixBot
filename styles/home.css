@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Dongle:wght@300;400;700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+.title-card {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 110%;
+    padding-bottom: 28px;
+}
+
+.info-card {
+    font-family: "Dongle", sans-serif;
+    color: #d1d1d1;
+    font-size: 26px;
+    line-height: 100%;
+    padding-bottom: 36px;
+    font-weight: 300;
+}
+
+/* HERO */
+
+.hero {
+    padding: 180px 0;
+}
+
+.logo-cont {
+    
+    height: 265px;
+}
+
+.chib {
+    width: 240px;
+}
+
+.logo-cont .crown {
+    width: 30px;
+}
+
+.logo-hero-icon {
+    width: 95px;
+    height: 95px;
+    padding-right: 5px;
+    margin: 0 auto;
+}
+
+.logo-hero-text {
+    font-size: 70px;
+}
+
+.hero__info {
+    flex-basis: 460px;
+}
+
+.hero-slogan {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 54px;
+    font-weight: bold;
+    line-height: 120%;
+    padding-bottom: 30px;
+
+    /*
+    background: linear-gradient(145deg, #FF8800, #FFBB00, #FF6A00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    */
+}
+
+.hero-description {
+    font-family: "Nunito", sans-serif;
+    font-weight: regular;
+    font-size: 17px;
+    line-height: 150%;
+    padding-bottom: 40px;
+}
+
+.btn-add {
+    min-width: 166px;
+    min-height: 45px;
+    background-color: #0076FF;
+    color: white;
+    font-size: 16px;
+}
+
+.btn-add img {
+    width: 19px;
+    padding-right: 5px;
+}
+
+.btn-features {
+    min-width: 130px;
+    min-height: 45px;
+    background-color: #4A4A4A;
+    color: white;
+    font-size: 16px;
+}
+
+/* CONSER */
+
+.conser {
+    padding: 40px 0;
+    background-color: #2f3136;
+}
+
+.conser__container {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.img-conser img {
+    width: 60px;
+}
+
+.img-conser-pd {
+    padding-left: 60px;
+}
+
+/* UPTIME */
+
+.uptime {
+    padding: 200px 0;
+}
+.uptime-img img {
+    width: 490px;
+}
+.uptime-info {
+    flex-basis: 520px;
+}
+
+/* GREETING */
+
+.greeting-img img {
+    width: 490px;
+}
+.greeting-info {
+    flex-basis: 520px;
+}
+
+.btn-more {
+    min-width: 125px;
+    min-height: 45px;
+    background-color: #4A4A4A;
+    color: white;
+    font-size: 16px;
+}
+
+/* CUSTCMDS */
+
+.custcmds {
+    padding: 180px 0;
+}
+.custcmds-img img {
+    width: 490px;
+}
+.custcmds-info {
+    flex-basis: 520px;
+}
+
+/* GAMES */
+
+.games {
+    padding: 200px 0;
+}
+
+.games-img img {
+    width: 490px;
+}
+.games-info {
+    flex-basis: 520px;
+}
+
+/* SETBOT */
+
+.setbot {
+    padding: 180px 0;
+}
+.setbot-img img {
+    width: 490px;
+}
+.setbot-info {
+    flex-basis: 520px;
+}
+
+/* LASTINVT */
+
+.lastinvt {
+    padding-bottom: 180px;
+}
+
+.lastinvt__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.lastinvt span {
+    font-family: "Nunito Sans", sans-serif;
+
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 110%;
+    padding-bottom: 30px;
+}

@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+main {
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.commands__container {
+    width: 1120px;
+    margin: 80px auto;
+}
+
+.heading-commands-container {
+    display: flex;
+    align-items: center;
+    margin: 20px auto;
+}
+
+.content-commands-container {
+    display: flex;
+    justify-content: space-between;
+    
+    border-radius: 10px;
+}
+
+.nav-commands {
+    width: 290px;
+}
+
+.line-nav-commands {
+    background-color: #2f3036;
+    border: 1px solid #3d3d42;
+    border-radius: 10px;
+    padding: 5px 0;
+}
+
+.n-list-item {
+    border-radius: 10px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.n-list-item:hover {
+    background-color: #46464C;
+    cursor: pointer;
+}
+
+.n-list-item:active {
+    background-color: #46464C;
+}
+
+.n-list-item {
+    height: 35px;
+    margin: 5px;
+}
+
+.n-list-item img {
+    width: 17px;
+    padding-left: 10px;
+}
+
+.n-list-item p {
+    width: 250px;
+    padding-left: 12px;
+    font-weight: 400;
+    font-size: 18px;
+
+    display: flex;
+    align-items: center;
+}
+
+.list-commands {
+    background-color: #2f3036;
+    border: 1px solid #3d3d42;
+    width: 820px;
+    border-radius: 10px;
+}
+
+.c-list-item-content {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+.slash-container {
+    width: 26px;
+    height: 26px;
+    background-color: #46464C;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list-commands img {
+    width: 9px;
+}
+
+.list-commands p {
+    font-size: 18px;
+    padding-left: 8px;
+}
+
+.list-commands .description-command {
+    font-size: 16px;
+    color: #c4c4c4;
+}
+
+.c-list-item .line {
+    width: 100%;
+    border-top: 1px solid;
+    color: #40444b;
+}
+
+.block__btn {
+    margin: 25px 0;
+}
+
+.block__btn a {
+    margin-left: auto;
+}
+
+.btn-add {
+    min-width: 166px;
+    min-height: 45px;
+    background-color: #0076FF;
+    color: white;
+    font-size: 16px;
+}
+
+.btn-add img {
+    width: 19px;
+    padding-right: 5px;
+}
