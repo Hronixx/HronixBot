@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/home.css">
+    <title>HronixBot - The most fun bot for Discord</title>
+    <link rel="icon" type="image/svg+xml" href="img/ababotmini.png"/>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            overflow-x: hidden; /* Блокируем горизонтальный скролл */
+            color: #fff;
+
+            background-color: #1e1e23;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+
+            opacity: 0;
+            animation: fadeIn 0.3s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .logo {
+            font-family: "Candara", sans-serif;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hronix {
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .bot {
+            font-weight: regular;
+            color: #968dce;
+        }
+
+        .bot-color {
+            color: #968dce;
+        }
+
+        .container {
+            max-width: 1120px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 500;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+            filter: brightness(1.1);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+            filter: brightness(0.8);
+        }
+
+        .block__btn {
+            font-family: "DM Sans", sans-serif;
+            display: flex;
+            gap: 16px;
+        }
+
+        /* HEADER */
+
+        .header__container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            width: 1360px;
+            margin: 0 auto;
+        }
+
+        .logo-header-icon {
+            width: 32px;
+            padding-right: 5px;
+        }
+
+        .logo-header-text {
+            font-size: 27px;
+        }
+
+        nav {
+            font-family: "Nunito", sans-serif;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        header nav ul li {
+            padding: 30px;
+        }
+
+        header nav ul li a {
+            color: #bebebe;
+            transition: all 0.2s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .btn-login {
+            min-width: 90px;
+            padding: 10px 14px;
+            background-color: #0076FF;
+            color: white;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-login img {
+            width: 17px;
+            padding-right: 5px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background-color: #2f3036;
+        }
+
+        .full-line-container {
+            width: 100%;
+        }
+
+        .full-line {
+            width: 100%;
+            border-top: 1px solid;
+            color: #40444b;
+        }
+
+        .block-line {
+            width: 1120px;
+            border-top: 1px solid;
+        }
+
+        .block-line-container {
+            max-width: 1120px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #40444b;
+        }
+
+        .fo-up-cont {
+            padding: 25px 0;
+
+            max-width: 1120px;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+        }
+
+        .cfuc-left {
+            flex-basis: 390px;
+            margin: auto 0;
+        }
+
+        .fo-logo {
+            font-family: "Candara", sans-serif;
+            display: flex;
+            align-items: center;
+            padding-bottom: 15px;
+        }
+
+        .fo-logo-icon {
+            width: 36px;
+            height: 36px;
+            align-items: center;
+        }
+
+        .fo-logo-text {
+            font-size: 28px;
+            padding-left: 5px;
+        }
+
+        .fo-info {
+            font-family: "Nunito", sans-serif;
+            font-weight: medium;
+            color: #bebebe;
+            font-size: 15px;
+        }
+
+        .fo-links {
+            font-family: "Nunito", sans-serif;
+            display: flex;
+            justify-content: center;
+            color: #fff;
+        }
+
+        .fo-links p {
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .mn-pd {
+            padding-left: 70px;
+        }
+
+        .fo-links ul {
+            list-style: none;
+        }
+
+        .fo-links ul li {
+            padding: 5px 0;
+        }
+
+        .fo-links ul li p {
+            font-weight: medium;
+            padding-bottom: 8px;
+        }
+
+        .fo-links ul li a {
+            color: #bebebe;
+            font-weight: regular;
+            transition: all 0.2s ease;
+        }
+
+        .fo-links ul li a:hover
+        {
+            color: #e9e9e9;
+        }
+
+        .fo-down-cont {
+            font-family: "Nunito", sans-serif;
+            font-size: 15px;
+            font-weight: regular;
+            color: #afafaf;
+            padding: 25px 0;
+        }
+
+        .who-did-it-cont {
+            display: flex;
+            align-items: center;
+        }
+
+        .who-did-it-cont img {
+            padding: 0 5px;
+            width: 14px;
+            height: 14px;
+        }
+
+        .logo-watermark {
+            position: fixed;
+            top: 10%;
+            left: 80%;
+            transform: translate(-50%, -50%);
+            z-index: -1; /* Под всем контентом */
+            opacity: 0.05; /* 3% прозрачности */
+            animation: subtle-pulse 8s ease-in-out infinite;
+            pointer-events: none;
+        }
+        .watermark-logo {
+            width: 50vw; /* Очень большое */
+            max-width: 1200px;
+            height: auto;
+            filter: blur(2px); /* Легкое размытие */
+
+            /* Градиентная маска */
+            mask-image: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(0, 0, 0, 0.8) 5%,
+                rgba(0, 0, 0, 0.8) 10%,
+                transparent 100%
+            );
+            -webkit-mask-image: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(0, 0, 0, 0.8) 5%,
+                rgba(0, 0, 0, 0.8) 10%,
+                transparent 100%
+            );
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="logo-watermark">
+        <img src="img/ababot.png" alt="Логотип бота" class="watermark-logo">
+    </div>
+
+    <header>
+        <div class="header__container">
+            <div class="logo">
+                <img src="img/elogo2.png" alt="" class="logo-header-icon">
+                <span class="logo-header-text">
+                    <span class="hronix header-hronix">Hronix</span><span class="bot header-bot">Bot</span>
+                </span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="commands.html">Commands</a></li>
+                    <li><a href="docs.html">Docs</a></li>
+                    <!-- <li><a data-page="terms">Terms of use</a></li> !-->
+                </ul>
+            </nav>
+            <div class="block__btn">
+                <a href="https://discord.com/oauth2/authorize?client_id=962475878976213002&permissions=0&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1&integration_type=0&scope=bot+applications.commands.permissions.update">
+                    <button class="btn btn-login">Add to Discord</button>
+                </a>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="logo-cont">
+                    <div class="logo">
+                        <img class="logo-hero-icon" src="img/elogo2.png" alt="">
+                        <div class="logo-hero-text">
+                            <span class="hronix">Hronix</span><span class="bot bot-color">Bot</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero__info">
+                    <p class="hero-slogan">The most<br>fun bot<br>for Discord</p>
+                    <p class="hero-description">HronixBot is a versatile tool, designed to make managing your Discord server simple, and communication enjoyable.</p>
+                    <div class="block__btn">
+                        <button class="btn btn-add">
+                            <img src="img/discordLogoIcon.png" alt="">
+                            Add to Discord
+                        </button>
+                        <button class="btn btn-features">See features</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="conser">
+            <div class="container">
+                <p class="conser__container">More than 5 Discord servers use HronixBot</p>
+                <div class="img-conser">
+                    <img src="img/WinxClub-logo.png" alt="">
+                    <img class="img-conser-pd" src="img/mydsser-logo.png" alt="">
+                    <img class="img-conser-pd" src="img/krip-logo.png" alt="">
+                </div>
+            </div>
+        </section>
+
+        <section class="uptime">
+            <div class="container">
+                <div class="uptime-img">
+                    <img src="img/Снимок экрана 2025-09-16 022747.png" alt="">
+                </div>
+                <div class="uptime-info">
+                    <p class="title-card">We have been working with you for more than 3 years</p>
+                    <p class="info-card">HronixBot has been working and is ready to work on your servers since April 9th, 2022, helping with moderation and creating a great mood. We are eternally grateful that you allow us to brighten up your Discord experience and for your support. We are glad to be a part of your community!</p>
+                    <div class="block__btn">
+                        <button class="btn btn-add">
+                            <img src="img/discordLogoIcon.png" alt="">
+                            Add to Discord
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="greeting">
+            <div class="container">
+                <div class="greeting-info">
+                    <p class="title-card">Welcome messages</p>
+                    <p class="info-card">Create an unforgettable first impression. HronixBot automatically welcomes new members with a personal message in a special channel, a mention and a role. Help newbies feel welcome from the very first step on your server.</p>
+                    <div class="block__btn">
+                        <button class="btn btn-add">
+                            <img src="img/discordLogoIcon.png" alt="">
+                            Add to Discord
+                        </button>
+                        <a href="ff.html">
+                            <button class="btn btn-more">Learn more</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="greeting-img">
+                    <img src="img/Снимок экрана 2025-09-16 212921.png" alt="">
+                </div>
+            </div>
+        </section>
+
+        <section class="games">
+            <div class="container">
+                <div class="games-img">
+                    <img src="img/Снимок экрана 2025-09-16 220244.png" alt="">
+                </div>
+                <div class="games-info">
+                    <p class="title-card">Games with HronixBot</p>
+                    <p class="info-card">A collection of fun mini-games right in the chat! Challenge your friends to duels, try your luck at slots, or guess the word in "Gallows". Earn in-game currency for wins and prove who is the best on the server!</p>
+                    <div class="block__btn">
+                        <button class="btn btn-add">
+                            <img src="img/discordLogoIcon.png" alt="">
+                            Add to Discord
+                        </button>
+                        <button class="btn btn-more">Learn more</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="lastinvt">
+            <div class="lastinvt__container">
+                <span>Create the best Discord server with HronixBot!</span>
+                <div class="block__btn">
+                    <button class="btn btn-add">
+                        <img src="img/discordLogoIcon.png" alt="">
+                        Add to Discord
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <div class="full-line-container">
+        <div class="full-line"></div>
+    </div>
+
+    <footer>
+        <section class="footer">
+            <div class="fo-up-cont">
+                <div class="cfuc-left">
+                    <div class="fo-logo">
+                        <img class="fo-logo-icon" src="img/elogo2.png" alt="">
+                        <div class="fo-logo-text">
+                            <span class="hronix">Hronix</span><span class="bot">Bot</span>
+                        </div>
+                    </div>
+                    <div class="fo-info">
+                        <p>Your faithful assistant at Discord! Create, customize and have fun with us</p>
+                    </div>
+                </div>
+                <div class="fo-links">
+                    <ul>
+                        <li><p>HronixBot</p></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Support Server</a></li>
+                        <li><a href="#">Invite</a></li>
+                    </ul>
+
+                    <!--
+                    <ul class="mn-pd">
+                        <li><p>Rules</p></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                    -->
+                    
+                </div>
+            </div>
+            <div class="block-line-container">
+                <div class="block-line"></div>
+            </div>
+            <div class="container fo-down-cont">
+                <div class="protection-rights-cont">
+                    <span class="protection-rights">&copy; 2022-2025 HronixBot. All rights reserved.</span>
+                </div>
+                <div class="who-did-it-cont">
+                    <span>Made with</span>
+                    <img src="img/heart.png" alt="">
+                    <span>by hron1xx</span>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+</body>
+</html>
